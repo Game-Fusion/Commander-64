@@ -1,0 +1,49 @@
+local w,h = term.getSize()
+local current = term.current()
+function term.current()
+  return window.create(current,1,1,current.getSize())
+end
+
+local oldback = term.setBackgroundColour
+function term.setBackgroundColor(colour)
+  if colour == 1 then
+    oldback(colour)
+  else
+    oldback(colours.black)
+  end
+end
+
+term.setBackgroundColour = term.setBackgroundColor
+
+local oldtext = term.setTextColour
+function term.setTextColor(colour)
+  if colour == 32768 then
+    oldtext(colour)
+  else
+    oldtext(colours.white)
+  end  
+end
+
+term.setTextColour = term.setTextColor
+
+for i, v in ipairs({peripheral.find("drive")}) do
+  if v.isDiskPresent() and v.getMountPath() and fs.exists(v.getMountPath().."/game") then
+    shell.run("/"..v.getMountPath().."/game")
+    break
+  end
+end
+
+-- temporary startup, might resemble a commodore 64 in future or this animation will stay
+
+term.setBackgroundColour(colours.white)
+term.clear()
+sleep(0.25)
+term.setBackgroundColour(colours.black)
+for i = 1,h do
+  line(i)
+  sleep(0.1)
+end
+sleep(0.5)
+term.setTextColour(colours.white)
+centerSlow(8,"Welcome to Codename 64.")
+sleep(1.5)
