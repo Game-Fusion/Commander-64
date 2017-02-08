@@ -33,6 +33,25 @@ for i, v in ipairs({peripheral.find("drive")}) do
   end
 end
 
+local function line(y)
+  term.setCursorPos(1,y)
+  term.clearLine()
+end
+
+function center(y,str)
+  local w,h = term.getSize()
+  local x = (w/2)-(#str/2)
+  term.setCursorPos(x,y)
+  print(str)
+end
+
+function centerSlow(y,txt)
+  local w,h = term.getSize()
+  local x = (w/2)-(#txt/2)
+  term.setCursorPos(x,y)
+  textutils.slowPrint(txt)
+end
+
 -- temporary startup, might resemble a commodore 64 in future or this animation will stay
 
 term.setBackgroundColour(colours.white)
