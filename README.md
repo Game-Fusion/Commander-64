@@ -1,12 +1,14 @@
-# Codename Breaking Point
+# Commander 64
 The next degeneration.
 
 ## Featuring:
 
-### - Q-Link Online Service
+### - Q-Link Online Service - connect your C64 to the internet!
 
-### - Advanced monochrome graphics
+### - Capable of playing note audio on multiple iron note blocks simultaneously!
 
-### - Your great Monochrome Entertainment System (MES) games enjoyable via backwards compatibility, with enriched visuals thanks to the addition of grey and light grey (1.75+)
+### - Pure productivity, without unneeded animations, graphics or programs - just the necessities. Less time wasted = more time spent working.
 
-And more! More details coming soon.
+### - A capable gaming machine; play many classic games such as Chess natively
+
+Coming Soon.
