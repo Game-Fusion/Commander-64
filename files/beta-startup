@@ -1,0 +1,37 @@
+local w,h = term.getSize()
+
+function center(y,string)
+  local w,h = term.getSize()
+  local x = (w/2)-(#string/2)
+  term.setCursorPos(x,y)
+  print(string)
+end
+
+local function start()
+term.setBackgroundColour(colours.black)
+term.setTextColour(colours.white)
+term.clear()
+center(9,"Welcome to Commander 64.")
+sleep(2)
+term.clear()
+end
+start()
+
+local function draw()
+term.setBackgroundColour(colours.white)
+paintutils.drawBox(1,1,w,h)
+--term.setTextColour(colours.black)
+--center(1,"Commander 64")
+term.setTextColour(colours.white)
+term.setBackgroundColour(colours.black)
+paintutils.drawFilledBox(2,2,w-1,h-1)
+center(3,"*** COMMANDER 64 V1 ***")
+term.setCursorPos(2,5)
+print("READY.")
+term.setCursorPos(2,6)
+term.setCursorBlink(true)
+end draw()
+
+--while true do draw()
+--  if fs.exists("/disk/run.c64") then
+--  UNFINISHED
