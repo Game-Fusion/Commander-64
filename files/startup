@@ -12,7 +12,7 @@ term.setBackgroundColour(colours.black)
 term.setTextColour(colours.white)
 term.clear()
 center(9,"Welcome to Commander 64.")
-sleep(2)
+sleep(1.25)
 term.clear()
 end
 start()
@@ -30,8 +30,20 @@ term.setCursorPos(2,5)
 print("READY.")
 term.setCursorPos(2,6)
 term.setCursorBlink(true)
-end draw()
+end
 
---while true do draw()
---  if fs.exists("/disk/run.c64") then
---  UNFINISHED
+while true do draw()
+  if fs.exists("/disk/run.c64") then print("COMMANDER 64 DISK INSERTED")
+  sleep(0.5)
+  print("LOADING")
+  sleep(0.5)
+  shell.run("/disk/run.c64")
+  elseif fs.exists("/disk/update.c64") then print("UPDATE AVAILABLE!")
+  sleep(0.75)
+  print("To cancel this update, please shut down")
+  print("Update beginning in 10 seconds...")
+  sleep(10)
+  shell.run("/disk/update.c64")
+  else sleep() --prevent "too long without yielding"
+ end
+end
