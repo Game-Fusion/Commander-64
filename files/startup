@@ -15,13 +15,12 @@ center(9,"Welcome to Commander 64.")
 sleep(1.25)
 term.clear()
 end
+
 start()
 
 local function draw()
 term.setBackgroundColour(colours.white)
 paintutils.drawBox(1,1,w,h)
---term.setTextColour(colours.black)
---center(1,"Commander 64")
 term.setTextColour(colours.white)
 term.setBackgroundColour(colours.black)
 paintutils.drawFilledBox(2,2,w-1,h-1)
