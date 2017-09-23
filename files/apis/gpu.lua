@@ -11,8 +11,19 @@ function clr()
   term.clear()
 end
 
-function textCol(col)
-  term.setTextColour(colours.col)
+function center(y, string)
+  local w,h = term.getSize()
+  local x = (w/2)-(#string/2)
+  term.setCursorPos(x,y)
+  print(string)
+end
+
+
+function centerSlow(y, string)
+  local w,h = term.getSize()
+  local x = (w/2)-(#string/2)
+  term.setCursorPos(x,y)
+  textutils.slowPrint(string)
 end
 
 function setBg(col)
@@ -23,7 +34,7 @@ function setTxt(col)
   term.setTextColour(colours.col)
 end
 
-function clearScr(back)
+function clrBg(back)
   term.setBackgroundColour(colours.back)
   term.clear()
 end
