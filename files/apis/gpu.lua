@@ -22,6 +22,10 @@ function cursPos(x,y)
   term.setCursorPos(x,y)
 end
 
+function cursBlink(bool)
+  term.setCursorBlink(bool)
+end
+
 function centerSlow(y, string)
   local w,h = term.getSize()
   local x = (w/2)-(#string/2)
