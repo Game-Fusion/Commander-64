@@ -43,8 +43,56 @@ function waitForAll(1, 2)
   parallel.waitForAll(1, 2)
 end
 
--- Vector (will not include other vector functions because it may interfere with maths)
+-- Multishell support for future multithreading/multishell(?)
+-- Multishell commands begin with t to indicate threading/multishell + to avoid conflicts
 
-function vNew(1, 2, 3)
-  vector.new(1, 2, 3)
+function tGetTitle(tab)
+  multishell.getTitle(tab)
+end
+
+function tGetCount()
+  multishell.getCount()
+end
+
+function tLaunch(env, path)
+  multishell.launch(env, path)
+end
+
+function tSetFocus(tab)
+  multishell.setFocus(tab)
+end
+
+function tSetTitle(tab, title)
+  multishell.setTitle(tab, title)
+end
+
+function tGetTitle(tab)
+  multishell.getTitle(tab)
+end
+
+function tGetFocus(tab)
+  multishell.getFocus(tab)
+end
+
+-- Other processes
+-- eg. GPS, encoding and serialization
+
+function serialize(data)
+  textutils.serialize(data)
+end
+
+function unserialize(data)
+  textutils.unserialize(data)
+end
+
+function serializeJSON(data)
+  textutils.serializeJSON(data)
+end
+
+function urlEncode(url)
+  textutils.urlEncode(url)
+end
+
+function locate(timeout)
+  gps.locate(timeout)
 end
