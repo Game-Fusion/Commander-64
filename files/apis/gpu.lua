@@ -18,6 +18,9 @@ function center(y, string)
   print(string)
 end
 
+function cursPos(x,y)
+  term.setCursorPos(x,y)
+end
 
 function centerSlow(y, string)
   local w,h = term.getSize()
