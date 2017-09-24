@@ -4,99 +4,53 @@
 -- Bit API for bitwise binary manipulation
 -- Bit already had simple syntax so it's largely the same
 
-function blshift(n, bit) -- Shifts a number left by a specified number of bits
-  bit.blshift(n, bit)
-end
+blshift = bit.blshift -- Shifts a number left by a specified number of bits
 
-function brshift(n, bit) -- Shifts a number right arithmetically by a specified number of bits
-  bit.brshift(n, bit)
-end
+brshift = bit.brshift -- Shifts a number right arithmetically by a specified number of bits
 
-function blogic_rshift(n, bit) -- Shifts a number right logically by a specified number of bits
-  bit.blogic_rshift(n, bit)
-end
+blogic_rshift = bit.blogic_rshift -- Shifts a number right logically by a specified number of bits
 
-function bxor(m, n) -- Computes the bitwise exclusive OR of two numbers
-  bit.bxor(m, n)
-end
+bxor = bit.bxor -- Computes the bitwise exclusive OR of two numbers
 
-function bor(m, n) --  Computes the bitwise inclusive OR of two numbers
-  bit.bor(m, n)
-end
+bor = bit.bor --  Computes the bitwise inclusive OR of two numbers
 
-function band(m, n) -- Computes the bitwise AND of two numbers
-  bit.band(m, n)
-end
+band = bit.band -- Computes the bitwise AND of two numbers
 
-function bnot(n) -- Computes the bitwise NOT of a number
-  bit.bnot(n)
-end
+bnot = bit.bnot -- Computes the bitwise NOT of a number
 
 -- Parallel functions
 -- Syntax intact for convenience
 
-function waitForAny(1, 2) -- Only 2 for now - will eventually get infinite threads
-  parallel.waitForAny(1, 2)
-end
+waitForAny = parallel.waitForAny -- infinite threads
 
-function waitForAll(1, 2)
-  parallel.waitForAll(1, 2)
-end
+waitForAll = parallel.waitForAll
 
 -- Multishell support for future multithreading/multishell(?)
 -- Multishell commands begin with t to indicate threading/multishell + to avoid conflicts
 
-function tGetTitle(tab)
-  multishell.getTitle(tab)
-end
+tGetTitle = multishell.getTitle
 
-function tGetCount()
-  multishell.getCount()
-end
+tGetCount = multishell.getCount
 
-function tLaunch(env, path)
-  multishell.launch(env, path)
-end
+tLaunch = multishell.launch
 
-function tSetFocus(tab)
-  multishell.setFocus(tab)
-end
+tSetFocus = multishell.setFocus
 
-function tSetTitle(tab, title)
-  multishell.setTitle(tab, title)
-end
+tSetTitle = multishell.setTitle
 
-function tGetTitle(tab)
-  multishell.getTitle(tab)
-end
-
-function tGetFocus(tab)
-  multishell.getFocus(tab)
-end
+tGetFocus = multishell.getFocus
 
 -- Other processes
 -- eg. GPS, encoding and serialization
 
-function sleep(n)
-  os.sleep(n)
-end
+sleep = os.sleep
 
-function serialize(data)
-  textutils.serialize(data)
-end
+serialize = textutils.serialize
 
-function unserialize(data)
-  textutils.unserialize(data)
-end
+unserialize = textutils.unserialize
 
-function serializeJSON(data)
-  textutils.serializeJSON(data)
-end
+serializeJSON = textutils.serializeJSON
 
-function urlEncode(url)
-  textutils.urlEncode(url)
-end
+urlEncode = textutils.urlEncode
 
-function locate(timeout)
-  gps.locate(timeout)
-end
+locate = gps.locate
