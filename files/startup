@@ -1,11 +1,13 @@
-os.loadAPI("/apis/gpu")
+os.loadAPI("/apis/iop")
+iop.loadAPI("/apis/gpu")
+iop.loadAPI("/apis/cpu")
 
 local w,h = gpu.getSize()
 local function start()
 gpu.setTxt(white)
 gpu.clrBg(black)
 gpu.center(9,"Welcome to Commander 64.")
-sleep(1.25)
+cpu.sleep(1.25)
 gpu.clr()
 end
 start()
@@ -25,18 +27,18 @@ end
 
 while true do draw()
   if fs.exists("/disk/run.c64") then print("COMMANDER 64 DISK INSERTED")
-  sleep(0.5)
+  cpu.sleep(0.5)
   print("LOADING")
-  sleep(0.5)
-  shell.run("/disk/run.c64")
+  cpu.sleep(0.5)
+  iop.run("/disk/run.c64")
   elseif fs.exists("/disk/update.c64") then print("UPDATE AVAILABLE!")
-  sleep(0.75)
+  cpu.sleep(0.75)
   print("To cancel this update, please shut down")
   print("(Hold CTRL + S to shut down)")
-  sleep(0.75)
+  cpu.sleep(0.75)
   print("Update beginning in 10 seconds...")
-  sleep(10)
-  shell.run("/disk/update.c64")
-  else sleep() --prevent "too long without yielding"
+  cpu.sleep(10)
+  iop.run("/disk/update.c64")
+  else cpu.sleep() --prevent "too long without yielding"
  end
 end
