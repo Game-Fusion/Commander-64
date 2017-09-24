@@ -3,34 +3,26 @@
 
 -- Basic clear and colour functions
 
-function blit(text, textcol, backcol)
-  term.blit(text, textcol, backcol)
-end
+blit = term.blit
 
-function clr()
-  term.clear()
-end
+clr = term.clear
 
-function center(y, string)
+function center(y, str)
   local w,h = term.getSize()
-  local x = (w/2)-(#string/2)
+  local x = (w/2)-(#str/2)
   term.setCursorPos(x,y)
-  print(string)
+  print(str)
 end
 
-function cursPos(x,y)
-  term.setCursorPos(x,y)
-end
+cursPos = term.setCursorPos
 
-function cursBlink(bool)
-  term.setCursorBlink(bool)
-end
+cursBlink = term.setCursorBlink
 
-function centerSlow(y, string)
+function centerSlow(y, str)
   local w,h = term.getSize()
-  local x = (w/2)-(#string/2)
+  local x = (w/2)-(#str/2)
   term.setCursorPos(x,y)
-  textutils.slowPrint(string)
+  textutils.slowPrint(str)
 end
 
 function setBg(col) -- thanks to MultMine for fix
@@ -53,47 +45,43 @@ end
 
 -- Window/display commands
 
-function winSize()
-  term.getSize()
-end
+winSize = term.getSize
 
-function newWindow(parent, x, y, w, h)
-  window.create(parent, x, y, w, h)
-end
+newWindow = window.create
 
-function current()
-  term.current()
-end
+current = term.current
 
-function redirect(target)
-  term.redirect(target)
-end
+redirect = term.redirect
 
 function setVis(bool)
-  window.setVisible(bool)
+  local func = term.current().setVisible
+  if func then
+    func(bool)
+  end
 end
 
 function redraw()
-  window.redraw()
+  local func = term.current().redraw
+  if func then
+    func()
+  end
 end
 
 function monTxtScale(size)
-  monitor.setTextScale(size)
+  local func = term.current().setTextScale
+  if func then
+    func(size)
+  end
 end
 
 -- Paintutils derived commands
 
-function loadImg(src)
-  paintutils.loadImage(src)
-end
+loadImg = paintutils.loadImage
 
-function drawImg(img, x, y)
-  paintutils.drawImage(img, x, y)
-end
+drawImg = paintutils.drawImage
 
 function drawPixel(x, y, col)
-  term.setBackgroundColour(colours[col])
-  paintutils.drawPixel(x, y)
+  paintutils.drawPixel(x, y, colours[col])
 end
 
 function drawLine(x1, y1, x2, y2, col)
@@ -110,10 +98,6 @@ end
 
 -- Textutils commands
 
-function slowWrite(text, spd)
-  textutils.slowWrite(text, spd)
-end
+slowWrite = textutils.slowWrite
 
-function slowPrint(text, spd)
-  textutils.slowPrint(text, spd)
-end
+slowPrint = textutils.slowPrint
