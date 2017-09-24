@@ -26,6 +26,8 @@ function centerSlow(y, str)
   textutils.slowPrint(str)
 end
 
+bg = term.setBackgroundColour
+
 function setBg(col) -- thanks to MultMine for fix
   term.setBackgroundColour(colours[col])
 end
