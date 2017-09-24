@@ -1,5 +1,6 @@
 -- Minimalist graphics API by Mr_Iron2 for Commander 64
 -- Essentials from term, window, paintutils and textutils
+-- Cleaned up and fixed by MultMine
 
 -- Basic clear and colour functions
 
