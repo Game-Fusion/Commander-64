@@ -91,20 +91,21 @@ function drawImg(img, x, y)
   paintutils.drawImage(img, x, y)
 end
 
-function drawPixel(x, y)
+function drawPixel(x, y, col)
+  term.setBackgroundColour(colours[col])
   paintutils.drawPixel(x, y)
 end
 
 function drawLine(x1, y1, x2, y2, col)
-  paintutils.drawLine(x1, y1, x2, y2, colours.col)
+  paintutils.drawLine(x1, y1, x2, y2, colours[col])
 end
 
 function drawBox(x1, y1, x2, y2, col)
-  paintutils.drawBox(x1, y1, x2, y2, colours.col)
+  paintutils.drawBox(x1, y1, x2, y2, colours[col])
 end
 
 function drawFilledBox(x1, y1, x2, y2, col)
-  paintutils.drawFilledBox(x1, y1, x2, y2, colours.col)
+  paintutils.drawFilledBox(x1, y1, x2, y2, colours[col])
 end
 
 -- Textutils commands
