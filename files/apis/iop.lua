@@ -1,190 +1,104 @@
 -- API made to replicate an input/output processor (IOP)'s functionality
 
 -- OS functionality
-function run(string)
-  shell.run(string)
-end
+run = shell.run
 
-function loadAPI(api)
-  os.loadAPI(api)
-end
+loadAPI = os.loadAPI
 
-function unloadAPI(api)
-  os.unloadAPI(api)
-end
+unloadAPI = os.unloadAPI
 
-function pullEvt(string)
-  os.pullEvent(string)
-end
+pullEvt = os.pullEvent
 
 --pullEvt == pullEvent need to experiment before implementing
 
-function pullEvtRaw(string)
-  os.pullEventRaw(string)
-end
+pullEvtRaw = os.pullEventRaw
 
 --pullEvtRaw == pullEventRaw
 
 -- FS management
 
-function list(string)
-  fs.list(string)
-end
+list = fs.list
 
-function getName(path)
-  fs.getName(path)
-end
+getName = fs.getName
 
-function getDrive(path)
-  fs.getDrive(path)
-end
+getDrive = fs.getDrive
 
-function getSize(path)
-  fs.getSize(path)
-end
+getSize = fs.getSize
 
-function freeSpace(path)
-  fs.getFreeSpace(path)
-end
+freeSpace = fs.getFreeSpace
 
 --freeSpace == getFreeSpace
 
-function mkDir(path)
-  fs.makeDir(path)
-end
+mkDir = fs.makeDir
 
-function move(from, to)
-  fs.move(from, to)
-end
+move = fs.move
 
-function copy(from, to)
-  fs.copy(from, to)
-end
+copy = fs.copy
 
-function delete(path)
-  fs.delete(path)
-end
+delete = fs.delete
 
-function combine(base, local)
-  fs.combine(base, local)
-end
+combine = fs.combine
 
-function open(path, rw)
-  fs.open(path, rw)
-end
+open = fs.open
 
-function getDir(path)
-  fs.getDir(path)
-end
+getDir = fs.getDir
 
 -- Disk
 
-function diskPresent(side)
-  disk.isPresent(side)
-end
+diskPresent = disk.isPresent
 
-function diskHasData(side)
-  disk.hasData(side)
-end
+diskHasData = disk.hasData
 
-function diskMountPath(side)
-  disk.getMountPath(side)
-end
+diskMountPath = disk.getMountPath
 
-function setDiskLabel(side)
-  disk.setLabel(side)
-end
+setDiskLabel = disk.setLabel
 
-function getDiskLabel(side)
-  disk.getLabel(side)
-end
+getDiskLabel = disk.getLabel
 
-function getDiskID(side)
-  disk.getID(side)
-end
+getDiskID = disk.getID
 
-function eject(side)
-  disk.eject(side)
-end
+eject = disk.eject
 
 -- Peripherals
 
-function pIsPresent(side)
-  peripheral.isPresent(side)
-end
+pIsPresent = peripheral.isPresent
 
-function pGetType(side)
-  peripheral.getType(side)
-end
+pGetType = peripheral.getType
 
-function pGetMethods(side)
-  peripheral.getMethods(side)
-end
+pGetMethods = peripheral.getMethods
 
-function pCall(side, cmd)
-  peripheral.call(side, cmd)
-end
+pCall = peripheral.call
 
-function pWrap(side)
-  peripheral.wrap(side)
-end
+pWrap = peripheral.wrap
 
-function pFind(type)
-  peripheral.find(type)
-end
+pFind = peripheral.find
 
-function pGetNames()
-  peripheral.getNames()
-end
+pGetNames = peripheral.getNames
 
 -- Redstone
 
-function rGetSides()
-  redstone.getSides()
-end
+rGetSides = rs.getSides
 
-function rGetInput(side)
-  redstone.getInput(side)
-end
+rGetInput = rs.getInput
 
-function rSetOutput(side, bool)
-  redstone.setOutput(side, bool)
-end
+rSetOutput = rs.setOutput
 
-function rGetOutput(side)
-  redstone.getOutput(side)
-end
+rGetOutput = rs.getOutput
 
-function rGetAnalogInput(side)
-  redstone.getAnalogInput(side)
-end
+rGetAnalogInput = rs.getAnalogInput
 
-function rSetAnalogOutput(side, strength)
-  redstone.setAnalogOutput(side, strength)
-end
+rSetAnalogOutput = rs.setAnalogOutput
 
-function rGetAnalogOutput(side)
-  redstone.getAnalogOutput(side)
-end
+rGetAnalogOutput = rs.getAnalogOutput
 
-function rGetBundledInput(side)
-  redstone.getBundledInput(side)
-end
+rGetBundledInput = rs.getBundledInput
 
-function rGetBundledOutput
-  redstone.getBundledOutput(side)
-end
+rGetBundledOutput = rs.getBundledOutput
 
-function rSetBundledOutput(side, col)
-  redstone.setBundledOutput(side, colours.col)
-end
+rSetBundledOutput = rs.setBundledOutput
 
-function rTestBundledInput(side, col)
-  redstone.testBundledInput(side, colours.col)
-end
+rTestBundledInput = rs.testBundledInput
 
 -- Misc
 
-function getKeyName(code)
-  keys.getName(code)
-end
+getKeyName = keys.getName
