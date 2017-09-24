@@ -46,6 +46,8 @@ tGetFocus = multishell.getFocus
 
 startTimer = os.startTimer
 
+clock = os.clock
+
 cancelTimer = os.cancelTimer
 
 sleep = os.sleep
