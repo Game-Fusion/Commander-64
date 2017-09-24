@@ -33,16 +33,18 @@ function centerSlow(y, string)
   textutils.slowPrint(string)
 end
 
---function setBg(col)
---  term.setBackgroundColour(colours.col)
---end
---function setTxt(col)
---  term.setTextColour(colours.col)
---end
---function clrBg(back)
---  term.setBackgroundColour(colours.back)
---  term.clear()
---end
+function setBg(col) -- thanks to MultMine for fix
+  term.setBackgroundColour(colours[col])
+end
+
+function setTxt(col)
+  term.setTextColour(colours[col])
+end
+
+function clrBg(back)
+  term.setBackgroundColour(colours[back])
+  term.clear()
+end
 
 function clrLine(y)
   term.setCursorPos(1,y)
