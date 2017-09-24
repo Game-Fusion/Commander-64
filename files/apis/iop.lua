@@ -103,30 +103,6 @@ rSetBundledOutput = rs.setBundledOutput
 
 rTestBundledInput = rs.testBundledInput
 
--- Modem I/O
-
-mIsOpen = modem.isOpen
-
-openModem = modem.open
-
-mOpen = modem.open --alias
-
-closeModem = modem.close
-
-mClose = modem.close
-
-mCloseAll = modem.closeAll
-
-closeAllModems = modem.closeAll
-
-mCallRemote = modem.callRemote
-
-mIsWireless = modem.isWireless
-
-isModemWireless = modem.isWireless
-
-mIsPresentRemote = modem.isPresentRemote
-
 -- Misc
 
 getKeyName = keys.getName
