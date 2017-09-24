@@ -77,6 +77,10 @@ end
 -- Other processes
 -- eg. GPS, encoding and serialization
 
+function sleep(n)
+  os.sleep(n)
+end
+
 function serialize(data)
   textutils.serialize(data)
 end
