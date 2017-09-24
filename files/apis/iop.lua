@@ -11,6 +11,10 @@ unloadAPI = os.unloadAPI
 
 pullEvt = os.pullEvent
 
+pullEvent = os.pullEvent
+
+pullEventRaw == os.pullEventRaw
+
 pullEvtRaw = os.pullEventRaw
 
 -- FS management
