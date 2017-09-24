@@ -1,13 +1,17 @@
 -- API made to replicate an input/output processor (IOP)'s functionality
 -- By Mr_Iron2 and MultMine
 
--- OS functionality
+-- OS
 
 run = shell.run
 
 loadAPI = os.loadAPI
 
 unloadAPI = os.unloadAPI
+
+qEvt = os.queueEvent
+
+queueEvent = os.queueEvent
 
 pullEvt = os.pullEvent
 
