@@ -1,6 +1,8 @@
 -- API made to replicate an input/output processor (IOP)'s functionality
+-- By Mr_Iron2 and MultMine
 
 -- OS functionality
+
 run = shell.run
 
 loadAPI = os.loadAPI
@@ -9,11 +11,7 @@ unloadAPI = os.unloadAPI
 
 pullEvt = os.pullEvent
 
---pullEvt == pullEvent need to experiment before implementing
-
 pullEvtRaw = os.pullEventRaw
-
---pullEvtRaw == pullEventRaw
 
 -- FS management
 
@@ -26,8 +24,6 @@ getDrive = fs.getDrive
 getSize = fs.getSize
 
 freeSpace = fs.getFreeSpace
-
---freeSpace == getFreeSpace
 
 mkDir = fs.makeDir
 
@@ -98,6 +94,30 @@ rGetBundledOutput = rs.getBundledOutput
 rSetBundledOutput = rs.setBundledOutput
 
 rTestBundledInput = rs.testBundledInput
+
+-- Modem I/O
+
+mIsOpen = modem.isOpen
+
+openModem = modem.open
+
+mOpen = modem.open --alias
+
+closeModem = modem.close
+
+mClose = modem.close
+
+mCloseAll = modem.closeAll
+
+closeAllModems = modem.closeAll
+
+mCallRemote = modem.callRemote
+
+mIsWireless = modem.isWireless
+
+isModemWireless = modem.isWireless
+
+mIsPresentRemote = modem.isPresentRemote
 
 -- Misc
 
