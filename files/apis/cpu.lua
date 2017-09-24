@@ -1,5 +1,6 @@
 -- API for managing processor tasks
 -- Including but not limited to calculations and process management
+-- By Mr_Iron2 and MultMine
 
 -- Bit API for bitwise binary manipulation
 -- Bit already had simple syntax so it's largely the same
@@ -42,6 +43,10 @@ tGetFocus = multishell.getFocus
 
 -- Other processes
 -- eg. GPS, encoding and serialization
+
+startTimer = os.startTimer
+
+cancelTimer = os.cancelTimer
 
 sleep = os.sleep
 
