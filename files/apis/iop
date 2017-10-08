@@ -3,7 +3,7 @@
 
 -- OS
 
-run = shell.run
+--run = shell.run
 
 loadAPI = os.loadAPI
 
