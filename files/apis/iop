@@ -17,7 +17,7 @@ pullEvt = os.pullEvent
 
 pullEvent = os.pullEvent
 
-pullEventRaw == os.pullEventRaw
+pullEventRaw = os.pullEventRaw
 
 pullEvtRaw = os.pullEventRaw
 
