@@ -29,17 +29,33 @@ waitForAll = parallel.waitForAll
 -- Multishell support for future multithreading/multishell(?)
 -- Multishell commands begin with t to indicate threading/multishell + to avoid conflicts
 
-tGetTitle = multishell.getTitle
-
-tGetCount = multishell.getCount
-
-tLaunch = multishell.launch
-
-tSetFocus = multishell.setFocus
-
-tSetTitle = multishell.setTitle
-
-tGetFocus = multishell.getFocus
+if multishell then
+  tGetTitle = multishell.getTitle
+  tGetCount = multishell.getCount
+  tLaunch = multishell.launch
+  tSetFocus = multishell.setFocus
+  tSetTitle = multishell.setTitle
+  tGetFocus = multishell.getFocus
+else
+  tGetTitle = function()
+    return ""
+  end
+  tGetCount = function()
+    return 1
+  end
+  tLaunch = function()
+    return false
+  end
+  tSetFocus = function()
+    return true
+  end
+  tSetTItle = function()
+    return false
+  end
+  tGetFocus = function()
+    return 1
+  end
+end
 
 -- Other processes
 -- eg. GPS, encoding and serialization
