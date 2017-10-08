@@ -6,6 +6,30 @@ os.loadAPI("/apis/gpu")
 os.loadAPI("/apis/cpu")
 os.loadAPI("/apis/iop")
 
+--    QLink test
+
+local modem = peripheral.find("modem")
+modem.open(6464)
+modem.transmit(6464, 6464, {sType = "requestStatus"})
+local t = os.startTimer(3)
+while true do
+  local e = {os.pullEvent()}
+  if e[1] == "modem_message" then
+    if e[3] == 6464 then
+      if type(e[5]) == "table" then
+        if e[5].sType then
+          if e[5].sContents == "offline" then
+	    error("Q-Link has been terminated")
+          end
+        end
+      end
+    end
+  elseif e[1] == "timer" then
+    error("Q-Link is unavailable")
+    break
+  end
+end
+
 --    Variables
 
 local version = "3.5.3"
