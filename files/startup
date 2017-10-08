@@ -2,7 +2,7 @@ os.loadAPI("/apis/iop")
 os.loadAPI("/apis/gpu")
 os.loadAPI("/apis/cpu")
 
-local w,h = term.getSize()
+local w,h = gpu.winSize()
 local function start()
 gpu.setTxt("white")
 gpu.clrBg("black")
@@ -26,6 +26,8 @@ gpu.cursBlink(true)
 end
 
 while true do draw()
+  local event,key = os.pullEvent("key")
+  if key == keys.zero then shell.run("/.dev/devkit")
   if fs.exists("/disk/run.c64") then print("COMMANDER 64 DISK INSERTED")
   cpu.sleep(0.5)
   print("LOADING")
