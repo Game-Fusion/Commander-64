@@ -36,6 +36,11 @@ function setTxt(col)
   term.setTextColour(colours[col])
 end
 
+
+function setText(col)
+  term.setTextColour(colours[col])
+end
+
 function clrBg(back)
   term.setBackgroundColour(colours[back])
   term.clear()
