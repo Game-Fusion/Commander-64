@@ -1,0 +1,28 @@
+-- OFFICIAL GAME FUSION 2017 COMMANDER 64 DEVELOPMENT KIT
+-- Licensed for use for the general public
+
+os.loadAPI("/apis/gpu")
+
+local function draw()
+  gpu.setText("black")
+  gpu.setBg("white")
+  gpu.center(3," Official C64 SDK ")
+  gpu.center(6," 1. Lua IDE ")
+  gpu.center(8," 2. Game Dev. Setup ")
+  gpu.center(10," 3. Shut down ")
+  gpu.cursPos(1,18)
+  print("BETA")
+  gpu.setBg("black")
+  gpu.setText("white")
+end
+
+while true do draw()
+  local event,key = os.pullEvent("key")
+  if key == keys.one then
+  shell.run("/.dev/ide")
+  elseif key == keys.two then 
+  shell.run("/.dev/sdk")
+  elseif key == keys.three then
+  os.shutdown()
+ end
+end
