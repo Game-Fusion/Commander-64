@@ -1,8 +1,8 @@
 -- Minimalist graphics API by Mr_Iron2 for Commander 64
 -- Essentials from term, window, paintutils and textutils
--- Cleaned up and fixed by MultMine
+-- Cleaned up and fixed by MultMine and Funey
 
--- Basic clear and colour functions
+-- Term clear and colour functions
 
 blit = term.blit
 
@@ -35,7 +35,6 @@ end
 function setTxt(col)
   term.setTextColour(colours[col])
 end
-
 
 function setText(col)
   term.setTextColour(colours[col])
