@@ -34,9 +34,9 @@ while true do draw()
   if key == keys.zero then shell.run("/.dev/devkit")
   
   if fs.exists("/disk/run.c64") then
-    print("COMMANDER 64 DISK INSERTED")
+    gpu.slowPrint("COMMANDER 64 DISK INSERTED")
     cpu.sleep(0.5)
-    print("LOADING")
+    gpu.slowPrint("LOADING")
     cpu.sleep(0.5)
     shell.run("/disk/run.c64")
   
