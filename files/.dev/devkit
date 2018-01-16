@@ -21,7 +21,10 @@ while true do draw()
   if key == keys.one then
   shell.run("/.dev/ide")
   elseif key == keys.two then 
-  shell.run("/.dev/sdk")
+--  shell.run("/.dev/sdk")
+  gpu.center(7, "Option not available!")
+  gpu.center(9, "To make your programs run on disk,")
+  gpu.center(10, "simply place it at /disk/run.c64.")
   elseif key == keys.three then
   os.shutdown()
  end
