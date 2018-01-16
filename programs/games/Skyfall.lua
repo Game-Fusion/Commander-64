@@ -3,7 +3,8 @@
 ]]--
 
 -- An optimised port of Skyfall by NitrogenFingers to C64
--- Ported by MrIron2
+-- Ported by Mr_Iron2
+
 os.loadAPI("/apis/gpu")
 
 -- Gonow32's Colour to Monochrome wrapper
@@ -31,7 +32,7 @@ if not term.isColour() then
   end
 end
 
-local version = 1
+local version = 1.1
 local reponame = "Skyfall"
 local platform = C64
 
