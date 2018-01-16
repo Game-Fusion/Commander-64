@@ -2,6 +2,8 @@
 -- Essentials from term, window, paintutils and textutils
 -- Cleaned up and fixed by MultMine and Funey
 
+local version = 1.1
+
 -- Term clear and colour functions
 
 blit = term.blit
@@ -56,13 +58,15 @@ end
 
 winSize = term.getSize
 
+getSize = term.getSize
+
 newWindow = window.create
 
 current = term.current
 
 redirect = term.redirect
 
-function setVis(bool)
+function setVis(bool) -- both term.current and term.setVisible
   local func = term.current().setVisible
   if func then
     func(bool)
