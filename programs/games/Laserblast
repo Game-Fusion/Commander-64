@@ -1,9 +1,10 @@
---  LaserBlast by NitrogenFingers
+--	LaserBlast by NitrogenFingers
 --	Port and optimisation by Mr_Iron2
+--	Note: Requires latest APIs
 
-os.loadAPI("/apis/gpu")
-os.loadAPI("/apis/cpu")
-os.loadAPI("/apis/iop")
+os.loadAPI("/apis/gpu.lua")
+os.loadAPI("/apis/cpu.lua")
+os.loadAPI("/apis/iop.lua")
 
 local w,h = gpu.winSize()
 local plpos = math.floor(w/2)
@@ -15,7 +16,7 @@ local left = false
 
 local level = 1
 local score = 0
-local gameover=false
+local gameover = false
 local killc = 0
 
 --x,y,dir
@@ -46,30 +47,30 @@ local landscape = {
 function drawHeader()
   if term.isColour() then gpu.setTxt("white") end
   gpu.cursPos(5, 1)
-  term.write("Score: "..score)
-  if score~=0 then term.write("00") end
+  gpu.write("Score: "..score)
+  if score~=0 then gpu.write("00") end
   local lstr = "Level: "..level
   gpu.cursPos(w-#lstr-5,1)
-  term.write(lstr)
+  gpu.write(lstr)
   
   if powerup > 0 then
     local pstr = "POWERUP"
     gpu.cursPos(w/2 - #pstr/2,1)
 	if term.isColour() then gpu.setTxt("cyan") end
-	term.write(pstr)
+	gpu.write(pstr)
   end
 end
 
 function drawPlayer()
   if term.isColour() then gpu.setTxt("white") end
   gpu.cursPos(plpos-1, h-1)
-  term.write("@@@")
+  gpu.write("@@@")
 end
 
 function drawProjectile(proj)
   if term.isColour() then gpu.setTxt("red") end
   gpu.cursPos(proj.x, proj.y)
-  term.write("|")
+  gpu.write("|")
 end
 
 function drawVacance(x,y)
@@ -83,18 +84,18 @@ function drawVacance(x,y)
   
   if y >= h-8 and y <= h-3 then
     if term.isColour() then gpu.setTxt("lime") end
-    term.write(string.sub(landscape[h - y - 2], x, x))
+    gpu.write(string.sub(landscape[h - y - 2], x, x))
   elseif y < h-8 then
 	for i=1,#stars do
 	  if x == stars[i].x and y == stars[i].y then 
 	    if term.isColour() then gpu.setTxt("yellow") end
-	    term.write(".")
+	    gpu.write(".")
 		return
       end
 	end
-	term.write(" ")
+	gpu.write(" ")
   else
-	term.write(" ")
+	gpu.write(" ")
   end
 end
 
@@ -103,17 +104,17 @@ function drawBaddie(baddy)
     if baddy.dtimer==0 then
       if baddy.pup then 
         if term.isColour() then gpu.setTxt("blue") end
-        term.write("P")
+        gpu.write("P")
       elseif baddy.frag then
         if term.isColour() then gpu.setTxt("brown") end
-        term.write("*")
+        gpu.write("*")
       else 
         if term.isColour() then gpu.setTxt("brown") end
-        term.write("O") 
+        gpu.write("O") 
       end
     else
       if term.isColour() then gpu.setTxt("orange") end
-      term.write("#")
+      gpu.write("#")
     end
 end
 
@@ -129,7 +130,7 @@ function drawLandscape()
   end
   for i=1,#stars do
     gpu.cursPos(stars[i].x, stars[i].y)
-    term.write(".")
+    gpu.write(".")
   end
   
   gpu.cursPos(1,h)
@@ -137,14 +138,14 @@ function drawLandscape()
   if term.isColour() then
     gpu.setTxt("green")
   end
-  term.write(land)
+  gpu.write(land)
   if term.isColour() then
     gpu.setTxt("lime")
   end
   
   for y,line in ipairs(landscape) do
 	gpu.cursPos(1,h-y-2)
-	term.write(line)
+	gpu.write(line)
   end
 end
 
@@ -285,12 +286,12 @@ function updatePlayer(key)
 
   if key==203 and plpos>1 then
 	gpu.cursPos(plpos+1,h-1)
-	term.write(" ")
+	gpu.write(" ")
     plpos=plpos-1
 	drawPlayer()
   elseif key==205 and plpos<w then
 	gpu.cursPos(plpos-1,h-1)
-	term.write(" ")
+	gpu.write(" ")
     plpos=plpos+1
 	drawPlayer()
   elseif key==57 then
@@ -335,12 +336,12 @@ end
 
 gpu.cursPos(plpos-1, h-1)
 if term.isColour() then gpu.setTxt("red") end
-term.write("###")
+gpu.write("###")
 local go = "Game Over!"
 gpu.cursPos(w/2 - #go/2, 10)
 if term.isColour() then gpu.setTxt("white") end
-term.write(go)
+gpu.write(go)
 gpu.cursPos(1,h)
-sleep(5)
+cpu.sleep(5)
 iop.rSetOutput("back", false)
-gpu.clr()
+gpu.clrBg("black")
