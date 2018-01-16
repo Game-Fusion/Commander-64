@@ -2,11 +2,11 @@
 --  Made by GravityScore and 1lann
 --  Port to Commander 64 by Mr_Iron2
 
-os.loadAPI("/apis/gpu")
-os.loadAPI("/apis/cpu")
-os.loadAPI("/apis/iop")
+os.loadAPI("/apis/gpu.lua")
+os.loadAPI("/apis/cpu.lua")
+os.loadAPI("/apis/iop.lua")
 
---    QLink test
+-- QLink test
 
 local modem = peripheral.find("modem")
 modem.open(6464)
