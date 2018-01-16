@@ -2,8 +2,15 @@
 -- Including but not limited to calculations and process management
 -- By Mr_Iron2 and MultMine
 
+local version = 1.1
+
+-- Basic math functionality
+
+randomInt = math.random -- Random integer between X and Y, ie. cpu.randomInt(1, 100)
+
+sqrt = math.sqrt -- Square root of a number
+
 -- Bit API for bitwise binary manipulation
--- Bit already had simple syntax so it's largely the same
 
 blshift = bit.blshift -- Shifts a number left by a specified number of bits
 
@@ -24,7 +31,7 @@ bnot = bit.bnot -- Computes the bitwise NOT of a number
 
 waitForAny = parallel.waitForAny -- infinite threads
 
-waitForAll = parallel.waitForAll
+waitForAll = parallel.waitForAll -- wait for all processes before proceeding
 
 -- Multishell support for future multithreading/multishell(?)
 -- Multishell commands begin with t to indicate threading/multishell + to avoid conflicts
@@ -36,22 +43,28 @@ if multishell then
   tSetFocus = multishell.setFocus
   tSetTitle = multishell.setTitle
   tGetFocus = multishell.getFocus
+  
 else
   tGetTitle = function()
     return ""
   end
+  
   tGetCount = function()
     return 1
   end
+  
   tLaunch = function()
     return false
   end
+  
   tSetFocus = function()
     return true
   end
+  
   tSetTItle = function()
     return false
   end
+  
   tGetFocus = function()
     return 1
   end
