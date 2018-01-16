@@ -4,14 +4,14 @@
 
 -- Loading C64 APIs
 
-os.loadAPI("/apis/cpu")
-os.loadAPI("/apis/gpu")
-os.loadAPI("/apis/iop")
+os.loadAPI("/apis/cpu.lua")
+os.loadAPI("/apis/gpu.lua")
+os.loadAPI("/apis/iop.lua")
 
 --  -------- Variables
 
 -- Version
-local version = "1.0"
+local version = "1.0.1"
 local args = {...}
 
 -- Editing
