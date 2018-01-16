@@ -13,7 +13,7 @@ term.redirect(window.create(current,1,1,current.getSize()))
 
 if not term.isColour() then
   local oldback = gpu.setBg
-  function term.setBackgroundColor(colour)
+  function gpu.setBg("colour")
     if colour == 1 then
       oldback(colour)
     else
@@ -22,7 +22,7 @@ if not term.isColour() then
   end
 
   local oldtext = gpu.setTxt
-  function term.setTextColor(colour)
+  function gpu.setTxt(colour)
     if colour == 32768 then
       oldtext(colour)
     else
@@ -33,6 +33,7 @@ end
 
 local version = 1
 local reponame = "Skyfall"
+local platform = C64
 
 local function displayNitrosoftTitle()
 	gpu.clr()
@@ -47,7 +48,7 @@ local function displayNitrosoftTitle()
 	if term.isColour() then gpu.setTxt("red") end
 	gpu.cursPos(math.floor(_w/2-#_t1), math.floor(_h/2)+2)
 	term.write(string.rep("-",#_t1*2))
-  gpu.setBg("green")
+ 	gpu.setBg("green")
 	gpu.cursPos(_w/2+#_t1-4, math.floor(_h/2)-2)
 	term.write("  ")
 	gpu.cursPos(_w/2+#_t1-4, math.floor(_h/2)-1)
@@ -57,9 +58,8 @@ local function displayNitrosoftTitle()
 	term.write("  ")
 	gpu.cursPos(_w/2+#_t1-3, math.floor(_h/2))
 	term.write("  ")
-	
 	gpu.setBg("black")
-  gpu.setTxt("white")
+	gpu.setTxt("white")
 	gpu.cursPos(1,_h)
 	term.write("v"..version)
 	os.pullEvent("key")
