@@ -1,4 +1,4 @@
--- Minimalist graphics API by Mr_Iron2 for Commander 64
+-- Advanced graphics API by Mr_Iron2 for Commander 64
 -- Essentials from term, window, paintutils and textutils
 -- Cleaned up and fixed by MultMine and Funey
 
@@ -27,6 +27,8 @@ function centerSlow(y, str)
 end
 
 bg = term.setBackgroundColour
+
+write = term.write
 
 function setBg(col) -- thanks to MultMine for fix
   term.setBackgroundColour(colours[col])
