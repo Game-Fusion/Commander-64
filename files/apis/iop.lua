@@ -43,7 +43,7 @@ delete = fs.delete
 
 combine = fs.combine
 
-open = fs.open
+open = fs.open -- REMEMBER TO CLOSE AFTER OPENING, h.close
 
 getDir = fs.getDir
 
