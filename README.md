@@ -8,4 +8,11 @@ The Q-Link online service allows your Commander 64 to communicate wirelessly ove
 
 Commander 64 is a machine built for those who want to do *more*. With NBS and other tools, you can unleash your best music on as many iron note blocks as you could want. Commander 64 also makes development interesting - with flexible CPU, GPU and IOP APIs designed to replicate their counterparts with concise but clear code, along with minimalistic design to make it just you and the machine, ComputerCraft programming just got more interesting. C64 can also be a gaming machine - the C64 is capable of delivering improved gaming experiences using its special APIs, so you can take a break from your work.
 
-Out now.
+## Installation
+
+Get the C64 files here:
+
+/startup: pastebin get PPsK13XD
+/apis/cpu.lua: pastebin get zABhn8nQ
+/apis/gpu.lua: pastebin get vmGUPHtP
+/apis/iop.lua: pastebin get RuXLZSKf
