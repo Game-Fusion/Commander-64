@@ -1,4 +1,4 @@
-local version = 1.1
+local version = 1.2
 
 os.loadAPI("/apis/iop.lua")
 os.loadAPI("/apis/gpu.lua")
@@ -30,21 +30,22 @@ end
 start()
 
 while true do draw()
-  local event,key = os.pullEvent("key")
-  if key == keys.zero then shell.run("/.dev/devkit")
+--  local event,key = os.pullEvent("key")
+--  if key == keys.zero then shell.run("/.dev/devkit") -- make this disk-based now as of v1.2 
   
   if fs.exists("/disk/run.c64") then
-    gpu.slowPrint("COMMANDER 64 DISK INSERTED")
+    gpu.cursBlink(false)
+    gpu.slowPrint("COMMANDER 64 DISK INSERTED.")
     cpu.sleep(0.5)
-    gpu.slowPrint("LOADING")
+    gpu.cursPos(2,7)
+    gpu.slowPrint("LOADING...")
     cpu.sleep(0.5)
     shell.run("/disk/run.c64")
   
   elseif fs.exists("/disk/update.c64") then
     print("UPDATE AVAILABLE!")
     cpu.sleep(0.75)
-    print("To cancel this update, please shut down")
-    print("(Hold CTRL + S to shut down)")
+    print("To cancel this update, please shut down (CTRL + S)")
     cpu.sleep(0.75)
     print("Update beginning in 10 seconds...")
     cpu.sleep(10)
