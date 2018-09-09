@@ -12,7 +12,9 @@ Commander 64 is a machine built for those who want to do *more*. With NBS and ot
 
 Get the C64 files here:
 
-/startup: pastebin get PPsK13XD
-/apis/cpu.lua: pastebin get zABhn8nQ
-/apis/gpu.lua: pastebin get vmGUPHtP
-/apis/iop.lua: pastebin get RuXLZSKf
+- /startup: pastebin get PPsK13XD
+- /apis/cpu.lua: pastebin get zABhn8nQ
+- /apis/gpu.lua: pastebin get vmGUPHtP
+- /apis/iop.lua: pastebin get RuXLZSKf
+
+Proper installer coming soon.
