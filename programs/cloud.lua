@@ -2,7 +2,7 @@
 -- Based upon Revolution's GRID/Cloud
 -- Powered by Q-Link
 
-function gridTitle()
+local function gridTitle()
   gpu.setTxt("white")
   gpu.clrBg("black")
   gpu.center(1,"Commodore Cloud")
@@ -12,7 +12,7 @@ function gridTitle()
   gpu.setBg("black")
 end
 
-function terminated()
+local function terminated()
   gridTitle()
   gpu.center(4,"Sorry!")
   gpu.center(6,"Q-Link has been terminated.")
@@ -28,7 +28,7 @@ gpu.center(6,"service. You can stream great games straight")
 gpu.center(7,"to your Commodore!")
 sleep(2)
 
-function render()
+local function render()
   gridTitle()
   gpu.setTxt("white")
   gpu.center(5,"Select a Game:")
